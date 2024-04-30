@@ -13,8 +13,8 @@ test('Checking the contact us form', async ({page})=> {
     await page.locator('//input[@placeholder="Company"]').fill('TestCompanyAutomation')
     await page.locator('#wpcf7-f783-o1 > form > div.f-contact-form > ul > li:nth-child(5) > p > span > select').click();
     await page.locator('#wpcf7-f783-o1 > form > div.f-contact-form > ul > li:nth-child(5) > p > span > select').selectOption({value: 'USD 10,000 - 20,000'});
-    await page.locator('//*[@id="wpcf7-f783-o1"]/form/div[2]/ul/li[6]/p/span/textarea').fill('Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum')
+    await page.locator('//*[@id="wpcf7-f783-o1"]/form/div[2]/ul/li[6]/p/span/textarea').fill("Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum")
     await page.locator('//input[@name="agreecheck[]"]').uncheck();
-    
-    await page.screenshot({ path: './Screenshots/ContactUsFormFilled.png' });
+    page.screenshot({ path: './Screenshots/ContactUsFormFilled.png' });
+    page.close();
 });

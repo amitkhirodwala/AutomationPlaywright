@@ -2,7 +2,7 @@ import {test, expect} from 'playwright/test';
 
 test('Checking button navigation on homepage', async ({page})=> {
     await page.goto('https://sigmasolve.com/');
-    await page.pause();
+    await page.locator('//*[@id="Navbar"]/div/div/div/section[1]/div/div[1]/div/div/div').click();
     await page.getByRole('link', {name:'Contact Us', exact:true}).click();
     await page.pause();
     await page.goto('https://sigmasolve.com/');
@@ -18,5 +18,6 @@ test('Checking button navigation on homepage', async ({page})=> {
     await page.locator('//*[@id="elementor-search-form-8618160"]').waitFor();
     await page.locator('//*[@id="elementor-search-form-8618160"]').fill('costa');
     await page.locator('//*[@id="elementor-search-form-8618160"]').press('Enter');
-    page.screenshot ({path: './Screenshots/CTAButtonNavigation.png'});
+    await page.screenshot ({path: './Screenshots/CTAButtonNavigation.png'});
+    await page.close();
 });
