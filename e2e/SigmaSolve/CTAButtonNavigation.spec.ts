@@ -22,4 +22,8 @@ test('Checking button navigation on homepage', async ({page})=> {
     await expect(page.getByText('Search Results for: costa')).toBeVisible();
     await page.screenshot ({path: './Screenshots/CTAButtonNavigation.png'});
     await page.close();
+
+
 });
+
+
