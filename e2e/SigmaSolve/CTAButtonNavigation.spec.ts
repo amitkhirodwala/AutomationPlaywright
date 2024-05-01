@@ -2,7 +2,7 @@ import {test, expect} from 'playwright/test';
 
 test('Checking button navigation on homepage', async ({page})=> {
     await page.goto('https://sigmasolve.com/');
-    await page.locator('//*[@id="Navbar"]/div/div/div/section[1]/div/div[1]/div/div/div').click();
+    await page.getByText('Leverage Our Technology').click();
     await page.getByRole('link', {name:'Contact Us', exact:true}).click();
     await page.pause();
     await page.goto('https://sigmasolve.com/');

@@ -2,7 +2,7 @@ import {test, expect} from 'playwright/test';
 
 test('Checking the contact us form', async ({page})=> {
     await page.goto('https://sigmasolve.com/');
-    await page.locator('//*[@id="Navbar"]/div/div/div/section[1]/div/div[1]/div/div/div').click();
+    await page.getByText('Leverage Our Technology').click();
     await page.getByRole('button', { name: 'Accept All' }).waitFor();
     await page.getByRole('button', { name: 'Accept All' }).click();
     await page.locator('//input[@placeholder="Full name"]').scrollIntoViewIfNeeded();

@@ -4,7 +4,7 @@ test('Clicking Navbar links with assertions', async ({page}) => {
 
     page.goto('https://sigmasolve.com/');
 
-    await page.locator('//*[@id="Navbar"]/div/div/div/section[1]/div/div[1]/div/div/div').click();
+    await page.getByText('Leverage Our Technology').click();
     await page.getByRole('button', { name: 'Accept All' }).waitFor();
     await page.getByRole('button', { name: 'Accept All' }).click        ();
 
